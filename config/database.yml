@@ -1,0 +1,20 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  host: localhost
+development:
+  <<: *default
+  database: windows_bash_test_application_development
+  username: postgres
+  password: password
+test:
+  <<: *default
+  database: windows_bash_test_application_test
+  username: postgres
+  password: password
+production:
+  <<: *default
+  database: windows_bash_test_application_production
+  username: windows_bash_test_application
+  password: <%= ENV['WINDOWS_BASH_TEST_APPLICATION_DATABASE_PASSWORD'] %>
