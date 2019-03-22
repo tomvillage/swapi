@@ -1,10 +1,9 @@
-
 require 'httparty'
 require 'pp'
 require 'json'
 
 
-class WelcomeController < ApplicationController
+class FilmsController < ApplicationController
 
   def index
 

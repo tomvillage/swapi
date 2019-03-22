@@ -1,15 +1,17 @@
-
 require 'httparty'
 require 'pp'
 require 'json'
 
 
-class WelcomeController < ApplicationController
+class CharactersController < ApplicationController
 
   def index
 
     response = HTTParty.get('https://swapi.co/api/films', :headers =>{'Content-Type' => 'application/json'} ).body
-    @films = JSON.parse(response)["results"]
+    response_json = JSON.parse(response)
+    puts response["results"]
+    puts "__________________________"
+    puts response["results"]
 
 
   end
