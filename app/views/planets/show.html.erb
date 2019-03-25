@@ -1,0 +1,55 @@
+<h1>Peronaje: <%=@planet["name"] %></h1>
+<strong>Periodo de rotación:</strong>
+<td><%=@planet["rotation_period"] %></td>
+<br>
+<strong>Periodo Orbital:</strong>
+<td><%=@planet["orbital_period"] %></td>
+<br>
+<strong>Diametro:</strong>
+<td><%=@planet["diameter"] %></td>
+<br>
+<strong>Clima:</strong>
+<td><%=@planet["climate"] %></td>
+<br>
+<strong>Gravedad</strong>
+<td><%=@planet["gravity"] %></td>
+<br>
+<strong>Terreno</strong>
+<td><%=@planet["terrain"] %></td>
+<br>
+<strong>Superficie de agua</strong>
+<td><%=@planet["surface_water"] %></td>
+<br>
+<strong>Poblacion</strong>
+<td><%=@planet["population"] %></td>
+<br>
+
+<table>
+  <thead>
+    <tr>
+      <th>Residentes:</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @character.each do |c|%>
+      <tr>
+        <td><a href="/people/<%=c[2]%>"><%= c[0]%></a><br> </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th>Peliculas:</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @film.each do |f|%>
+      <tr>
+        <td><a href="/films/<%=f[2]%>"><%= f[0]%></a><br> </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

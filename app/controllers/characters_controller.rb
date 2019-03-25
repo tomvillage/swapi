@@ -4,16 +4,14 @@ require 'json'
 
 
 class CharactersController < ApplicationController
+  include Consulta
 
-  def index
-
-    response = HTTParty.get('https://swapi.co/api/films', :headers =>{'Content-Type' => 'application/json'} ).body
-    response_json = JSON.parse(response)
-    puts response["results"]
-    puts "__________________________"
-    puts response["results"]
-
+  def show
+    response = HTTParty.get("https://swapi.co/api/people/#{params[:id]}", :headers =>{'Content-Type' => 'application/json'} ).body
+    @character = JSON.parse(response)
+    @film = consulta(JSON.parse(response)["films"], "title")
+    @starship = consulta(JSON.parse(response)["starships"], "name")
+    @planet = consulta_planet(JSON.parse(response)["homeworld"], "name")
 
   end
-
   end

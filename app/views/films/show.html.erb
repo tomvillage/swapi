@@ -1,0 +1,62 @@
+<div class='panel panel-default'>
+  <div class="panel-heading"><h1 class='text-center'><%= @film["title"] %></h1></div>
+  <table class='table table-bordered'>
+    <tr>
+      <th>Director:</th>
+      <td><%=@film["director"]%></td>
+    </tr>
+    <tr>
+      <th>Producer:</th>
+      <td><%= @film["producer"] %>kg</td>
+    </tr>
+  </table>
+  <div class="panel-heading"><h5 class='text-center'>Opening Crawl</h5></div>
+  <div class="panel-body">
+     <p><%= @film["opening_crawl"] %></p>
+   </div>
+</div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Personaje</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @character.each do |c|%>
+      <tr>
+        <td><%= link_to c[0], character_url(c[2]) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th>Planetas</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @planet.each do |p|%>
+      <tr>
+        <td><%= link_to p[0], planet_url(p[2]) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th>Naves</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @starship.each do |s|%>
+      <tr>
+        <td><%= link_to s[0], starship_url(s[2]) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

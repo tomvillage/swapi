@@ -1,0 +1,66 @@
+<h1>Nave: <%=@starship["name"] %></h1>
+<strong>Modelo:</strong>
+<td><%=@starship["model"] %></td>
+<br>
+<strong>Crado por:</strong>
+<td><%=@starship["manufacturer"] %></td>
+<br>
+<strong>Costo:</strong>
+<td><%=@starship["cost_in_credits"] %></td>
+<br>
+<strong>Largo:</strong>
+<td><%=@starship["climate"] %></td>
+<br>
+<strong>Velocidad Máxima:</strong>
+<td><%=@starship["max_atmosphering_speed"] %></td>
+<br>
+<strong>Tripulación:</strong>
+<td><%=@starship["crew"] %></td>
+<br>
+<strong>Pasajeros:</strong>
+<td><%=@starship["passengers"] %></td>
+<br>
+<strong>Capacidad de Carga:</strong>
+<td><%=@starship["cargo_capacity"] %></td>
+<br>
+<strong>Consumo</strong>
+<td><%=@starship["consumables"] %></td>
+<br>
+<strong>Hyperdive rating</strong>
+<td><%=@starship["hyperdrive_rating"] %></td>
+<br><strong>MGLT</strong>
+<td><%=@starship["MGLT"] %></td>
+<br><strong>Clase: </strong>
+<td><%=@starship["starship_class"] %></td>
+
+<br>
+
+<table>
+  <thead>
+    <tr>
+      <th>Pilotos:</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @character.each do |c|%>
+      <tr>
+        <td><a href="/people/<%=c[2]%>"><%= c[0]%></a><br> </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th>Peliculas:</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @film.each do |f|%>
+      <tr>
+        <td><a href="/films/<%=f[2]%>"><%= f[0]%></a><br> </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

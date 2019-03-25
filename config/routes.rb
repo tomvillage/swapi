@@ -1,7 +1,15 @@
 Rails.application.routes.draw do
-  get 'starships/index'
-  get 'planets/index'
-  get 'films/index'
-  get 'characters/index'
+  resources :characters do
+      get 'character/:id' => 'characters#show'
+    end
+  resources :starships do
+      get 'starships/:id' => 'starships#show'
+    end
+  resources :planets do
+        get 'starships/:id' => 'starships#show'
+    end
+  resources :films do
+    get 'films/:id' => 'films#show'
+  end
   root 'welcome#index'
 end

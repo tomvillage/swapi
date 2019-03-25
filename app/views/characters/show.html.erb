@@ -1,0 +1,55 @@
+<h1>Peronaje: <%=@character["name"] %></h1>
+<strong>Altura</strong>
+<td><%=@character["height"] %></td>
+<br>
+<strong>Peso</strong>
+<td><%=@character["mass"] %></td>
+<br>
+<strong>Peluca</strong>
+<td><%=@character["hair_color"] %></td>
+<br>
+<strong>Color de Piel</strong>
+<td><%=@character["skin_color"] %></td>
+<br>
+<strong>Color de Ojos</strong>
+<td><%=@character["eye_color"] %></td>
+<br>
+<strong>Fecha de nacimiento</strong>
+<td><%=@character["birth_year"] %></td>
+<br>
+<strong>Sexo</strong>
+<td><%=@character["height"] %></td>
+<br>
+<strong>Planeta</strong>
+<td><a href="/planets/<%=@planet[2]%>"><%= @planet[0]%></a><br> </td>
+
+<br>
+
+<table>
+  <thead>
+    <tr>
+      <th>Peliculas:</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @film.each do |f|%>
+      <tr>
+        <td><a href="/films/<%=f[2]%>"><%= f[0]%></a><br> </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<table>
+  <thead>
+    <tr>
+      <th>Naves:</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @starship.each do |f|%>
+      <tr>
+        <td><a href="/starships/<%=f[2]%>"><%= f[0]%></a><br> </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

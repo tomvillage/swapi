@@ -16,12 +16,11 @@
   <tbody>
     <% @films.each do |f|%>
       <tr>
-        <td><a href="/films/<%=f["id"]%>"><%= f["title"] %></a><br> </td>
+        <td><a href="/films/<%=f["episode_id"]%>"><%= f["title"] %></a><br> </td>
         <td><%=f["release_date"] %></td>
         <td><%= f[ "episode_id"] %></td>
         <td><%= f["director"] %></td>
         <td><%= f["producer"] %></td>
-
       </tr>
     <% end %>
   </tbody>
