@@ -20,9 +20,19 @@ module Consulta
 
   def consulta_search(json, atributo)
     listas_url = []
-    json.each do |x|
-      listas_url << x["url"]
-    end
+      while json["next"] != nil do
+        results = json["results"]
+        results.each do |x|
+          listas_url << x["url"]
+        end
+        puts json["next"]
+        puts "__________________"
+        resp = HTTParty.get(json["next"], :headers =>{'Content-Type' => 'application/json'} ).body
+        json = JSON.parse(resp)
+      end
+    json["results"].each do |x|
+        listas_url << x["url"]
+      end
     return consulta(listas_url, atributo)
   end
 
