@@ -1,3 +1,5 @@
+<%= render "searches/index" %>
+
 <h1>Peronaje: <%=@planet["name"] %></h1>
 <strong>Periodo de rotación:</strong>
 <td><%=@planet["rotation_period"] %></td>
@@ -33,7 +35,8 @@
   <tbody>
     <% @character.each do |c|%>
       <tr>
-        <td><a href="/people/<%=c[2]%>"><%= c[0]%></a><br> </td>
+        <td><%= link_to c[0], character_url(c[2]) %></td>
+
       </tr>
     <% end %>
   </tbody>
@@ -48,7 +51,7 @@
   <tbody>
     <% @film.each do |f|%>
       <tr>
-        <td><a href="/films/<%=f[2]%>"><%= f[0]%></a><br> </td>
+        <td><%= link_to f[0], film_url(f[2]) %></td>
       </tr>
     <% end %>
   </tbody>

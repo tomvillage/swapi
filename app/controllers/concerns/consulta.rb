@@ -18,8 +18,13 @@ module Consulta
       return tupla
   end
 
-
-
+  def consulta_search(json, atributo)
+    listas_url = []
+    json.each do |x|
+      listas_url << x["url"]
+    end
+    return consulta(listas_url, atributo)
+  end
 
 
 

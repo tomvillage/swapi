@@ -4,7 +4,6 @@ require 'httparty'
 require 'pp'
 require 'json'
 
-
 class StarshipsController < ApplicationController
   include Consulta
   def show
@@ -12,9 +11,6 @@ class StarshipsController < ApplicationController
     @starship = JSON.parse(response)
     @film = consulta(JSON.parse(response)["films"], "title")
     @character = consulta(JSON.parse(response)["pilots"], "name")
-
-
-
 
   end
   end

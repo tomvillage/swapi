@@ -1,3 +1,5 @@
+<%= render "searches/index" %>
+
 <h1>Peronaje: <%=@character["name"] %></h1>
 <strong>Altura</strong>
 <td><%=@character["height"] %></td>
@@ -34,7 +36,8 @@
   <tbody>
     <% @film.each do |f|%>
       <tr>
-        <td><a href="/films/<%=f[2]%>"><%= f[0]%></a><br> </td>
+        <td><%= link_to f[0], film_url(f[2]) %></td>
+
       </tr>
     <% end %>
   </tbody>
@@ -48,7 +51,8 @@
   <tbody>
     <% @starship.each do |f|%>
       <tr>
-        <td><a href="/starships/<%=f[2]%>"><%= f[0]%></a><br> </td>
+        <td><%= link_to f[0], starship_url(f[2]) %></td>
+
       </tr>
     <% end %>
   </tbody>

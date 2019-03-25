@@ -1,0 +1,64 @@
+<%= render "index" %>
+
+<h1>Resultado de busqueda</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Personajes:</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @character.each do |c|%>
+      <tr>
+        <td><%= link_to c[0], character_url(c[2]) %></td>
+
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th>Peliculas:</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @film.each do |f|%>
+      <tr>
+        <td><%= link_to f[0], film_url(f[2]) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th>Panetas:</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @planet.each do |f|%>
+      <tr>
+        <td><%= link_to f[0], film_url(f[2]) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th>Naves:</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @starship.each do |f|%>
+      <tr>
+        <td><%= link_to f[0], film_url(f[2]) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
