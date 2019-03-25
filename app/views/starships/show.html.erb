@@ -47,7 +47,6 @@
   <tbody>
     <% @character.each do |c|%>
       <tr>
-        <td><a href="/people/<%=c[2]%>"><%= c[0]%></a><br> </td>
         <td><%= link_to c[0], character_url(c[2]) %></td>
 
       </tr>
