@@ -9,15 +9,15 @@
       <th>Pelicula</th>
       <th>Año</th>
       <th>Numero</th>
-      <th>Direstor</th>
-      <th>Produstor</th>
+      <th>Director</th>
+      <th>Productor</th>
     </tr>
   </thead>
 
   <tbody>
     <% @films.each do |f|%>
       <tr>
-        <td><a href="/films/<%=f["episode_id"]%>"><%= f["title"] %></a><br> </td>
+        <td><a href="/films/<%=f["url"].split("/")[-1]%>"><%= f["title"] %></a><br> </td>
         <td><%=f["release_date"] %></td>
         <td><%= f[ "episode_id"] %></td>
         <td><%= f["director"] %></td>
