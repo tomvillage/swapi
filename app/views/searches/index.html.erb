@@ -42,7 +42,7 @@
   <tbody>
     <% @planet.each do |f|%>
       <tr>
-        <td><%= link_to f[0], film_url(f[2]) %></td>
+        <td><%= link_to f[0], planet_url(f[2]) %></td>
       </tr>
     <% end %>
   </tbody>
@@ -57,7 +57,7 @@
   <tbody>
     <% @starship.each do |f|%>
       <tr>
-        <td><%= link_to f[0], film_url(f[2]) %></td>
+        <td><%= link_to f[0], starship_url(f[2]) %></td>
       </tr>
     <% end %>
   </tbody>

@@ -2,8 +2,6 @@ class SearchesController < ApplicationController
 
   include Consulta
 
-
-
   def index
     response1 = HTTParty.get("https://swapi.co/api/people/?search=#{params[:q]}", :headers =>{'Content-Type' => 'application/json'} ).body
     @character = consulta_search(JSON.parse(response1), "name")
